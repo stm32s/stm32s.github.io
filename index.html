@@ -152,6 +152,11 @@
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
         <span class="site-state-item-count">1</span>
@@ -180,7 +185,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/12/hexo%E6%90%AD%E5%BB%BA%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%201/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/12/hexo%E6%90%AD%E5%BB%BA%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -198,7 +203,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/11/12/hexo%E6%90%AD%E5%BB%BA%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%201/" class="post-title-link" itemprop="url">hexo搭建遇到的问题</a>
+          <a href="/2023/11/12/hexo%E6%90%AD%E5%BB%BA%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">hexo搭建遇到的问题</a>
         </h2>
 
         <div class="post-meta-container">
@@ -208,9 +213,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-11-12 22:27:22 / 修改时间：22:26:08" itemprop="dateCreated datePublished" datetime="2023-11-12T22:27:22+08:00">2023-11-12</time>
+      <time title="创建时间：2023-11-12 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-12T00:00:00+08:00">2023-11-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-13 00:00:00" itemprop="dateModified" datetime="2023-11-13T00:00:00+08:00">2023-11-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
     </span>
 
   
@@ -225,40 +245,14 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="为什么使用hexo"><a class="markdownIt-Anchor" href="#为什么使用hexo"></a> 为什么使用hexo</h1>
 <p>主要是因为hexo支持Markdown文件直接渲染为页面，那么后续我写文章就可以直接在任何一个支持markdown编辑器的软件里编辑好，然后定期维护这些文章就好了，十分的便捷。好期待typecho什么时候也可以支持导入解析markdown文件。</p>
-<h1 id="遇到的一些问题"><a class="markdownIt-Anchor" href="#遇到的一些问题"></a> 遇到的一些问题</h1>
-<h2 id="域名问题"><a class="markdownIt-Anchor" href="#域名问题"></a> 域名问题</h2>
-<p>首先如果是使用GitHub搭建hexo博客，那么域名必须和用户名保持一致，<a target="_blank" rel="noopener" href="http://xn--username-jo1ot97l.github.io">比如username.github.io</a>，也就是间接说明，一个GitHub只能搭建一个博客。</p>
-<h2 id="访问加速"><a class="markdownIt-Anchor" href="#访问加速"></a> 访问加速</h2>
-<p>家里的GitHub访问及其缓慢，半天都打不开网站，会导致使用<strong>hexo d</strong>命令无法部署，现象是显示timeout，具体如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Failed to connect to github.com port 443: Timed out</span><br><span class="line">FATAL Something&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: Spawn failed</span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (D:\00-Work\blogNew\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">    at ChildProcess.emit (node:events:526:28)</span><br><span class="line">    at ChildProcess.cp.emit (D:\00-Work\blogNew\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">    at Process.ChildProcess._handle.onexit (node:internal/child_process:291:12)</span><br></pre></td></tr></table></figure>
-<p>我的博客源码对应的ssh github为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git@github.com:SysFlat/blogSource.git</span><br></pre></td></tr></table></figure>
-<p>那么如何解决呢？使用ssh链接访问github，具体在hexo的_config.yaml文件的最后：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:SysFlat/SysFlat.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>对于最新的next主题，提倡不直接修改下载下来的仓库文件，而是将配置文件移动到最外层，使用<code>_config.next.yml</code>. 这样做的好处是，后续的主题更新，只需<code>git pull</code>，不需要担心文件冲突或者丢失的问题</p>
-<h2 id="fatal-unable-to-auto-detect-email-address"><a class="markdownIt-Anchor" href="#fatal-unable-to-auto-detect-email-address"></a> fatal: unable to auto-detect email address</h2>
-<p>执行git config必须要在.deploy_git目录下执行，因为最终是将这个git仓库提交到github上去</p>
-<h2 id="error-deployer-not-found-git报错"><a class="markdownIt-Anchor" href="#error-deployer-not-found-git报错"></a> ERROR Deployer not found: git报错</h2>
-<p>安装插件<mark>hexo-deployer-git</mark>，执行如下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>可以参考： <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41688840/article/details/125826614">https://blog.csdn.net/qq_41688840/article/details/125826614</a></p>
-<h2 id="一台主机搭建多个hexo博客"><a class="markdownIt-Anchor" href="#一台主机搭建多个hexo博客"></a> 一台主机搭建多个Hexo博客</h2>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/TRHX/p/11699999.html">https://www.cnblogs.com/TRHX/p/11699999.html</a></p>
-<h1 id="待处理"><a class="markdownIt-Anchor" href="#待处理"></a> 待处理</h1>
-<ol>
-<li>[ ] <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7951e239ae04">https://www.jianshu.com/p/7951e239ae04</a> 如何配置博客的一些细节</li>
-<li>[ ] <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44732432/article/details/124714408">https://blog.csdn.net/qq_44732432/article/details/124714408</a></li>
-<li>[ ] 如何添加评论 <a target="_blank" rel="noopener" href="https://blog.csdn.net/jiunian_2761/article/details/122621667">https://blog.csdn.net/jiunian_2761/article/details/122621667</a></li>
-<li>[ ] 在服务器上搭建博客 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33827423/article/details/126027056?spm=1001.2101.3001.6650.15&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-15-126027056-blog-124067428.pc_relevant_recovery_v2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-15-126027056-blog-124067428.pc_relevant_recovery_v2&amp;utm_relevant_index=21">https://blog.csdn.net/qq_33827423/article/details/126027056?spm=1001.2101.3001.6650.15&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-15-126027056-blog-124067428.pc_relevant_recovery_v2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-15-126027056-blog-124067428.pc_relevant_recovery_v2&amp;utm_relevant_index=21</a></li>
-</ol>
-<h1 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h1>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://morething.top/sites/2496.html">https://morething.top/sites/2496.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xihe/p/17047902.html">https://www.cnblogs.com/xihe/p/17047902.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41688840/article/details/125826614">https://blog.csdn.net/qq_41688840/article/details/125826614</a></li>
-<li><a target="_blank" rel="noopener" href="https://morething.top/sites/2496.html">https://morething.top/sites/2496.html</a></li>
-</ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/12/hexo%E6%90%AD%E5%BB%BA%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
